@@ -32,7 +32,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# Haml for views
 gem 'haml-rails'
+# Bootstrap for style
+gem 'bootstrap', '~> 4.0.0'
+
+#Add Jquery
+gem 'jquery-rails'
+# For Requests to The github API
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +53,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers'
 
 end
 
