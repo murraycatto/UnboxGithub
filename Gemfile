@@ -48,13 +48,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
   gem 'guard-rspec', require: false
-  gem 'factory_girl_rails', '~> 4.5'
   gem 'pry'
-  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'
-
 end
 
 group :development do
