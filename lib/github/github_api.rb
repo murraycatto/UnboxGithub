@@ -1,7 +1,7 @@
 require 'faraday'
 require 'json'
 
-class Github
+class GithubAPI
   BASE = 'https://api.github.com'
 
   def self.get_user(username)
