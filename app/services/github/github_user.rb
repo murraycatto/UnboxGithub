@@ -37,12 +37,12 @@ module Github
     end
 
     def self.find(username)
-      User.new(API.get_user(username,"a3663095f4dd4ec10ffe95a46c0a4e776eb0f389"))
+      User.new(API.get_user(username))
     end
 
     def set_repos
       github_user_repos = []
-      API.get_repos(self.username,"a3663095f4dd4ec10ffe95a46c0a4e776eb0f389").each do |github_repo_json|
+      API.get_repos(self.username).each do |github_repo_json|
         github_user_repos.push(UserRepo.new(github_repo_json))
       end
       self.repos = github_user_repos
