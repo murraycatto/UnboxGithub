@@ -17,7 +17,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 function addLoading() {
   $("#SearchResults").html("<img class='github-loading' src='https://stylishthemes.github.io/GitHub-Dark/images/octocat-spinner-smil.min.svg'>");
 }

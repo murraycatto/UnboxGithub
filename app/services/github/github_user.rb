@@ -27,8 +27,11 @@ module Github
 
     def self.search(username)
       github_users = []
-      API.search_users(username)["items"].each do |github_user_json|
-        github_users.push(User.new(github_user_json))
+      response = API.search_users(username)
+      if response["items"]
+        response["items"].each do |github_user_json|
+          github_users.push(User.new(github_user_json))
+        end
       end
       github_users
     end
