@@ -1,0 +1,35 @@
+.masthead.text-center
+  .container
+    .row.align-items-center
+      .col-md-6.col-lg-6.col-xl-6.mx-auto.vh-100.align-items-center
+        .card
+          .card-body
+            .row.align-items-center
+              .col-lg-3.mx-auto.text-nowrap.text-center.px-2
+                %img.d-block.mx-auto.rounded-circle.img-fluid{:src => "#{@github_user.avatar_url}"}/
+              .col-lg-6.text-center.text-lg-left
+                %h2
+                  = @github_user.name if @github_user.name
+                  = @github_user.username unless @github_user.name
+                -if @github_user.fav_language
+                  %h6
+                    Favorite Language:
+                    %span.badge.badge-pill.badge-success.font-weight-normal
+                      = @github_user.fav_language
+                .card-text
+                  %small.text-muted
+                    = @github_user.location
+              .col-lg-3.col-6.mx-auto
+                .row.no-gutters.text-center.justify-content-end.align-items-end
+                  .col
+                    %h2
+                      = @github_user.followers
+                    %span.badge.badge-pill.badge-primary.font-weight-normal followers
+                  .col
+                    %h2
+                      = @github_user.following
+                    %span.badge.badge-pill.badge-info.font-weight-normal following
+                  .col
+                    %h2
+                      = @github_user.public_repos
+                    %span.badge.badge-pill.badge-dark.font-weight-normal public repos

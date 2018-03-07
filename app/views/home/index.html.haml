@@ -1,10 +1,12 @@
--# %header.masthead.text-white.text-center
--#   .container
--#     .row.h-100.align-items-center
--#       .col-md-10.col-lg-8.col-xl-7.mx-auto
--#         = form_with url: root_path do |f|
--#           .form-row.vh-100.align-items-center
--#             .col-12.col-md-9.mb-2.mb-md-0
--#               = f.text_field :username,{ placeholder:"Search for a user...", class:"form-control form-control-lg"}
--#             .col-12.col-md-3
--#               = f.submit "Search!", class:"btn btn-block btn-lg btn-primary"
+.masthead.text-center
+  .container
+    .row.align-items-center
+      .col-md-10.col-lg-8.col-xl-7.mx-auto.vh-100.align-items-center
+        = form_with url: search_path,format: :js,  html: { onsubmit: "addLoading();" } do |f|
+          .form-row
+            %h4 Type in a github username and click search
+            .col-12.col-md-9.mb-2.mb-md-0
+              = f.text_field :username,{ placeholder:"Search for a user...", class:"form-control form-control-lg"}
+            .col-12.col-md-3
+              = f.submit "Search!", class:"btn btn-block btn-lg btn-primary"
+        #SearchResults

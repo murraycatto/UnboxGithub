@@ -1,0 +1,29 @@
+.github-user-card{
+  clear: both;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #c3c3c3;
+  text-align: left;
+  text-decoration: none;
+  img{
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+  }
+  .username{
+    font-weight: bold;
+    font-size: 18px;
+    color: #444;
+  }
+  .score{
+    color: #c1c1c1;
+  }
+}
+.github-loading{
+  max-width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  margin-top: 20px;
+}

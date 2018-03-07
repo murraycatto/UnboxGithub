@@ -1,11 +1,15 @@
 require 'rails_helper'
-require File.expand_path('../../../lib/github/github_api.rb', __FILE__)
 
 describe 'Github API request' do
   it 'returns a list of users' do
-    response = Github::API.get_user("murraycatto")
+    response = Github::API.search_users("Murray")
     expect(response["total_count"]).to be > 0
     expect(response["items"].is_a?(Array)).to eq(true)
+  end
+
+  it 'returns a user' do
+    response = Github::API.get_user("murraycatto")
+    expect(response["login"]).to eq("murraycatto")
   end
 
   it 'returns a list of repos' do

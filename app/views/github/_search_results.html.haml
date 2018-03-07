@@ -1,0 +1,11 @@
+- github_users.each do |github_user|
+  = link_to github_user_path(github_user.username) do
+    .github-user-card.row
+      .col-sm-2
+        %img{src:"#{github_user.avatar_url}"}
+      .col-sm-10
+        .username
+          = github_user.username
+        .score
+          Score:
+          = github_user.score.round(2)
