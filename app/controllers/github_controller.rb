@@ -13,8 +13,12 @@ class GithubController < ApplicationController
 
   def show
     @github_user = Github::User.find(params["username"])
-    @github_user.set_repos
-    @github_user.calc_fav_lang
+    if !@github_user.username.nil?
+      @github_user.set_repos
+      @github_user.calc_fav_lang
+    else
+      redirect_to root_path
+    end
   end
 
 end
